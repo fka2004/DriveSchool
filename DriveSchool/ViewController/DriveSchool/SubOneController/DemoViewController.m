@@ -31,9 +31,7 @@
 
 - (void)viewDidLoad
 {
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"homeTitle" ofType:@"txt"];
-    NSMutableArray*tempArray=[NSKeyedUnarchiver unarchiveObjectWithFile:imagePath];
-    NSLog(@"%@",tempArray);
+  
     
     _dataArray=[[NSMutableArray alloc]init];
     _dataCountArray=[[NSMutableArray alloc]init];
@@ -43,12 +41,26 @@
     
 
     
-    NSLog(@"%@", DATABASE_PATH(DATABASE_NAME));
-    
     _database=[[DBHelper alloc]init];
     _db=[_database getDatabase];
     
     [_db executeUpdate:@"CREATE TABLE drivelist (id text, count text,type integer,carType text,answer text,answerA text,answerB text,answerC text,answerD text,image text,explain text,isError integer,isCollect integer,isDebar integer)"];
+    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"homeTitle" ofType:@"txt"];
+    _tempArray=[NSKeyedUnarchiver unarchiveObjectWithFile:imagePath];
+    NSLog(@"%d",[_tempArray count]);
+
+    for (int i=0; i<[_tempArray count]; i++) {
+        NSString*sql=[NSString stringWithFormat:@"INSERT INTO drivelist(id,count,type,carType,answer,answerA,answerB,answerC,answerD,image,explain,isError,isCollect,isDebar) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"];
+        ExamItem*item=[_tempArray objectAtIndex:i];
+        
+        [_db executeUpdate:sql,item.uid,item.count,item.type,item.carType,item.answer,item.answerA,item.answerB,item.answerC,item.answerD,item.image,item.explain,item.isError,item.isCollect,item.isDebar];
+        
+    }
+    [_dataCountArray addObjectsFromArray:_tempArray];
+    NSLog(@"%d",[_dataCountArray count]);
+    
+    
     [self selectData:0:10];
     currentIndex = 0;
     [super viewDidLoad];
@@ -62,64 +74,59 @@
     NSString*sql=[NSString stringWithFormat:@"SELECT count,id,type,carType,answer,answerA,answerB,answerC,answerD,image,explain,isError,isCollect,isDebar FROM drivelist limit %d,%d",index,count];
     FMResultSet *rs = [_db executeQuery:sql];
     while ([rs next]) {
-       
+        ExamItem*item=[[ExamItem alloc]init];
+        item.uid=[rs stringForColumn:@"id"];
+        item.count=[rs stringForColumn:@"count"];
+        item.type=[rs stringForColumn:@"type"];
+        item.carType=[rs stringForColumn:@"carType"];
+        item.answer=[rs stringForColumn:@"answer"];
+        item.answerA=[rs stringForColumn:@"answerA"];
+        item.answerB=[rs stringForColumn:@"answerB"];
+        item.answerC=[rs stringForColumn:@"answerC"];
+        item.answerD=[rs stringForColumn:@"answerD"];
+        item.image=[rs stringForColumn:@"image"];
+        item.explain=[rs stringForColumn:@"explain"];
+        item.isError=[rs stringForColumn:@"isError"];
+        item.isCollect=[rs stringForColumn:@"isCollect"];
+        item.isDebar=[rs stringForColumn:@"isDebar"];
         
-//        item.uid=[rs stringForColumn:@"id"];
-//        item.count=[rs stringForColumn:@"count"];
-//        item.type=[rs stringForColumn:@"type"];
-//        item.carType=[rs stringForColumn:@"carType"];
-//        item.answer=[rs stringForColumn:@"answer"];
-//        item.answerA=[rs stringForColumn:@"answerA"];
-//        item.answerB=[rs stringForColumn:@"answerB"];
-//        item.answerC=[rs stringForColumn:@"answerC"];
-//        item.answerD=[rs stringForColumn:@"answerD"];
-//        item.image=[rs stringForColumn:@"image"];
-//        item.explain=[rs stringForColumn:@"explain"];
-//        item.isError=[rs stringForColumn:@"isError"];
-//        item.isCollect=[rs stringForColumn:@"isCollect"];
-//        item.isDebar=[rs stringForColumn:@"isDebar"];
-        [_dict setValue:[rs stringForColumn:@"id"] forKey:@"id"];
-        [_dict setValue:[rs stringForColumn:@"count"] forKey:@"count"];
-        [_dict setValue:[rs stringForColumn:@"type"] forKey:@"type"];
-        [_dict setValue:[rs stringForColumn:@"carType"]forKey:@"carType"];
-        [_dict setValue:[rs stringForColumn:@"answer"] forKey:@"answer"];
-        [_dict setValue:[rs stringForColumn:@"answerA"] forKey:@"answerA"];
-        [_dict setValue:[rs stringForColumn:@"answerB"] forKey:@"answerB"];
-        [_dict setValue:[rs stringForColumn:@"answerC"] forKey:@"answerC"];
-        [_dict setValue:[rs stringForColumn:@"answerD"] forKey:@"answerD"];
-        [_dict setValue:[rs stringForColumn:@"image"] forKey:@"image"];
-        [_dict setValue:[rs stringForColumn:@"explain"] forKey:@"emplain"];
-        [_dict setValue:[rs stringForColumn:@"isError"] forKey:@"isError"];
-        [_dict setValue:[rs stringForColumn:@"isCollect"] forKey:@"isCollect"];
-        [_dict setValue:[rs stringForColumn:@"isDebar"] forKey:@"isDebar"];
-         ExamItem*item=[[ExamItem alloc]initWithDictionary:_dict];
-
+//                [_dict setValue:[rs stringForColumn:@"id"] forKey:@"id"];
+//                [_dict setValue:[rs stringForColumn:@"count"] forKey:@"count"];
+//                [_dict setValue:[rs stringForColumn:@"type"] forKey:@"type"];
+//                [_dict setValue:[rs stringForColumn:@"carType"]forKey:@"carType"];
+//                [_dict setValue:[rs stringForColumn:@"answer"] forKey:@"answer"];
+//                [_dict setValue:[rs stringForColumn:@"answerA"] forKey:@"answerA"];
+//                [_dict setValue:[rs stringForColumn:@"answerB"] forKey:@"answerB"];
+//                [_dict setValue:[rs stringForColumn:@"answerC"] forKey:@"answerC"];
+//                [_dict setValue:[rs stringForColumn:@"answerD"] forKey:@"answerD"];
+//                [_dict setValue:[rs stringForColumn:@"image"] forKey:@"image"];
+//                [_dict setValue:[rs stringForColumn:@"explain"] forKey:@"emplain"];
+//                [_dict setValue:[rs stringForColumn:@"isError"] forKey:@"isError"];
+//                [_dict setValue:[rs stringForColumn:@"isCollect"] forKey:@"isCollect"];
+//                [_dict setValue:[rs stringForColumn:@"isDebar"] forKey:@"isDebar"];
+//        ExamItem*item=[[ExamItem alloc]initWithDictionary:_dict];
         [_dataArray addObject:item];
+        
     }
+    
     [_dataCountArray addObjectsFromArray:_dataArray];
     NSString*strFilePath=[NSHomeDirectory() stringByAppendingString:@"/Documents/homeTitle.txt"];
-    NSLog(@"%@",strFilePath);
     [NSKeyedArchiver archiveRootObject:_dataCountArray toFile:strFilePath];
     
-    [rs close];
+
+    NSLog(@"%d",[_dataCountArray count]);
     
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"homeTitle" ofType:@"txt"];
-    NSMutableArray*tempArray=[NSKeyedUnarchiver unarchiveObjectWithFile:imagePath];
-    NSLog(@"%@",tempArray);
-    //dddddd
-//    NSString*strPath=[NSHomeDirectory() stringByAppendingFormat:@"/Documents/homeTitle.txt"];
-//    NSMutableArray*tempArray=[NSKeyedUnarchiver unarchiveObjectWithFile:strPath];
-//    [_list addObjectsFromArray:tempArray];
+    [rs close];
 }
 -(PageView *)createView:(int)index
 {
     NSLog(@"%d",index);
-    
+   
     _indexRecod=index-1;
     NSMutableString *string = [NSMutableString string];
     _vi = [[PageView alloc] initWithFrame:self.view.bounds txt:string] ;
      _vi.tag=index+10000-1;
-    NSLog(@"%d",index);
+    NSLog(@"%d",_vi.tag);
     [_indexArray addObject:_vi];
    
     NSLog(@"%d",_vi.tag);
@@ -131,13 +138,14 @@
     }
     
     ExamItem*item=[_dataCountArray objectAtIndex:index-1];
+    NSLog(@"%@",item.answerA);
+    
    
     _backImage=[[UIImageView alloc]initWithFrame:self.view.bounds];
     _backImage.userInteractionEnabled=YES;
     _backImage.backgroundColor=[UIColor purpleColor];
     UILabel*quest=[[UILabel alloc]initWithFrame:CGRectMake(10, 10,SCREEN_WIDTH-20, 100)];
     quest.numberOfLines=0;
-    [_backImage addSubview:quest];
     quest.text=item.count;
     [_backImage addSubview:quest];
     [_vi addSubview:_backImage];
@@ -159,44 +167,53 @@
         break;
     case 2:
         {
-            [_btnArray removeAllObjects];
+    
+            
+          
             _answerA=[UIButton buttonWithType:UIButtonTypeSystem];
             _answerA.frame=CGRectMake(10, 150, 100, 40);
+            
             _answerA.tag=10;
             [_answerA setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
             [_answerA setTitle:item.answerA forState:UIControlStateNormal];
             [_btnArray addObject:_answerA];
             [_answerA addTarget: self action:@selector(btnA:) forControlEvents:UIControlEventTouchUpInside];
             [_backImage addSubview:_answerA];
-
+           
             _answerB=[UIButton buttonWithType:UIButtonTypeSystem];
             _answerB.frame=CGRectMake(10, 150+(1*60), 100, 40) ;
             _answerB.tag=11;
             [_answerB setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
             [_answerB addTarget:self action:@selector(btnB:) forControlEvents:UIControlEventTouchUpInside];
             [_answerB setTitle:item.answerB forState:UIControlStateNormal];
+            [_backImage addSubview:_answerB];
             [_btnArray addObject:_answerB];
-            [_backImage  addSubview:_answerB];
+           
+            
+           
             _answerC=[UIButton buttonWithType:UIButtonTypeSystem];
             _answerC.frame=CGRectMake(10, 150+(2*60), 100, 40);
             _answerC.tag=12;
             [_answerC setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
             [_answerC setTitle:item.answerC forState:UIControlStateNormal];
             [_answerC addTarget:self action:@selector(btnC:) forControlEvents:UIControlEventTouchUpInside];
+            [_backImage addSubview:_answerC];
             [_btnArray addObject:_answerC];
            
-            [_backImage addSubview:_answerC];
+          
+          
             _answerD=[UIButton buttonWithType:UIButtonTypeSystem];
             _answerD.frame=CGRectMake(10, 150+(3*60), 100, 40);
             [_answerD setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
             _answerD.tag=13;
             [_answerD setTitle:item.answerD forState:UIControlStateNormal];
             [_answerD addTarget:self action:@selector(btnD:) forControlEvents:UIControlEventTouchUpInside];
+            [_backImage addSubview:_answerD];
             [_btnArray addObject:_answerD];
 
-            [_backImage addSubview:_answerD];
         
-         //   _answer=[UILabel alloc]initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
+        
+         
 
         }
         break;
@@ -211,75 +228,89 @@
 }
 -(void)btnA:(UIButton*)btn
 {
-    
+     NSLog(@"%d",_vi.tag);
+    PageView*page=[_indexArray objectAtIndex:[_indexArray count]-1];
+    NSLog(@"%d",page.tag);
     NSLog(@"%d",[_indexArray count]);
     NSLog(@"%d",_indexRecod);
+   
+    for(PageView*page in _indexArray)
+    {
+        if (page.tag==_indexRecod+10000-1) {
+            UIButton*btA=(UIButton*)[page viewWithTag:10];
+            [btA setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            UIButton*btB=(UIButton*)[page viewWithTag:11];
+            [btB setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            UIButton*btC=(UIButton*)[page viewWithTag:12];
+            [btC setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            UIButton*btD=(UIButton*)[page viewWithTag:13];
+            [btD setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        }
+    }
+ 
+   
+    
+    
 
-    PageView*page=[_indexArray objectAtIndex:_indexRecod-1];
-    UIButton*btA=(UIButton*)[page viewWithTag:10];
-    [btA setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    UIButton*btB=(UIButton*)[page viewWithTag:11];
-    [btB setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    UIButton*btC=(UIButton*)[page viewWithTag:12];
-    [btC setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    UIButton*btD=(UIButton*)[page viewWithTag:13];
-    [btD setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-  
-    
-//    for(UIButton*bt in _btnArray)
-//    {
-//
-//    }
-    
-  
    
   
 }
 -(void)btnB:(UIButton*)btn
 {
-    PageView*page=[_indexArray objectAtIndex:_indexRecod-1];
-    UIButton*btA=(UIButton*)[page viewWithTag:10];
-    [btA setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    UIButton*btB=(UIButton*)[page viewWithTag:11];
-    [btB setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    UIButton*btC=(UIButton*)[page viewWithTag:12];
-    [btC setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    UIButton*btD=(UIButton*)[page viewWithTag:13];
-    [btD setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    for(PageView*page in _indexArray)
+    {
+        if (page.tag==_indexRecod+10000-1) {
+            UIButton*btA=(UIButton*)[page viewWithTag:10];
+            [btA setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            UIButton*btB=(UIButton*)[page viewWithTag:11];
+            [btB setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            UIButton*btC=(UIButton*)[page viewWithTag:12];
+            [btC setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            UIButton*btD=(UIButton*)[page viewWithTag:13];
+            [btD setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        }
+    }
   
    
 }
 -(void)btnC:(UIButton*)btn
 {
-    
-    PageView*page=[_indexArray objectAtIndex:_indexRecod-1];
-    UIButton*btA=(UIButton*)[page viewWithTag:10];
-    [btA setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    UIButton*btB=(UIButton*)[page viewWithTag:11];
-    [btB setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    UIButton*btC=(UIButton*)[page viewWithTag:12];
-    [btC setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    UIButton*btD=(UIButton*)[page viewWithTag:13];
-    [btD setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    for(PageView*page in _indexArray)
+    {
+        if (page.tag==_indexRecod+10000-1) {
+            UIButton*btA=(UIButton*)[page viewWithTag:10];
+            [btA setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            UIButton*btB=(UIButton*)[page viewWithTag:11];
+            [btB setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            UIButton*btC=(UIButton*)[page viewWithTag:12];
+            [btC setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            UIButton*btD=(UIButton*)[page viewWithTag:13];
+            [btD setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        }
+    }
    
 }
 -(void)btnD:(UIButton*)btn
 {
-    PageView*page=[_indexArray objectAtIndex:_indexRecod-1];
-    UIButton*btA=(UIButton*)[page viewWithTag:10];
-    [btA setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    UIButton*btB=(UIButton*)[page viewWithTag:11];
-    [btB setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    UIButton*btC=(UIButton*)[page viewWithTag:12];
-    [btC setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    UIButton*btD=(UIButton*)[page viewWithTag:13];
-    [btD setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    for(PageView*page in _indexArray)
+    {
+        if (page.tag==_indexRecod+10000-1) {
+            UIButton*btA=(UIButton*)[page viewWithTag:10];
+            [btA setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            UIButton*btB=(UIButton*)[page viewWithTag:11];
+            [btB setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            UIButton*btC=(UIButton*)[page viewWithTag:12];
+            [btC setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            UIButton*btD=(UIButton*)[page viewWithTag:13];
+            [btD setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        }
+    }
   
 }
 
 -(void) indexChange:(int)newIndex
 {
-   // [_indexArray removeAllObjects];
+   
     if(currentIndex == newIndex)
     
         return;

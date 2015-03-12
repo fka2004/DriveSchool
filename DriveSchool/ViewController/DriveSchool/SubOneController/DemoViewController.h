@@ -35,6 +35,7 @@
     int _indexRecod;
     NSMutableArray*_indexArray;
     NSMutableDictionary*_dict;
+    NSMutableArray*_tempArray;
     
 }
 @property(nonatomic,retain) PageView *visitPage;

@@ -169,6 +169,7 @@
 		18BC5FC51AB1F93600D82CF1 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5FBC1AB1F93600D82CF1 /* FMDatabasePool.m */; };
 		18BC5FC61AB1F93600D82CF1 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5FBE1AB1F93600D82CF1 /* FMDatabaseQueue.m */; };
 		18BC5FC71AB1F93600D82CF1 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5FC11AB1F93600D82CF1 /* FMResultSet.m */; };
+		18BC5FD51AB2437E00D82CF1 /* homeTitle.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18BC5FD41AB2437E00D82CF1 /* homeTitle.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -457,6 +458,7 @@
 		18BC5FBF1AB1F93600D82CF1 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		18BC5FC01AB1F93600D82CF1 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		18BC5FC11AB1F93600D82CF1 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		18BC5FD41AB2437E00D82CF1 /* homeTitle.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = homeTitle.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -996,6 +998,7 @@
 		00ECBEBB1A87650C009F262E /* DriveSchool */ = {
 			isa = PBXGroup;
 			children = (
+				18BC5FD41AB2437E00D82CF1 /* homeTitle.txt */,
 				00ECBF1A1A876EF4009F262E /* ViewController */,
 				009229F81A889751001460E2 /* env */,
 				009229E51A88967A001460E2 /* Util */,
@@ -1246,6 +1249,7 @@
 				00C082201A9E2AE5008D21B1 /* image_main_news_five@2x.jpg in Resources */,
 				009227691A88656F001460E2 /* icon_main_tab_two_clicked@2x.png in Resources */,
 				0018650A1A938175001ED251 /* icon_driveSchool_teacherNine@2x.jpg in Resources */,
+				18BC5FD51AB2437E00D82CF1 /* homeTitle.txt in Resources */,
 				00B966821A96160400F3D7AF /* icon_driverSchool@2x.png in Resources */,
 				18BC5FAF1AB1F88000D82CF1 /* 驾校-科目一1_06-02.png in Resources */,
 				0092275E1A88656F001460E2 /* image_main_news_two@2x.png in Resources */,

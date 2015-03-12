@@ -24,6 +24,9 @@
 @synthesize isCollect=_isCollect;
 @synthesize isDebar=_isDebar;
 
+
+
+
 -(id)initWithDictionary:(NSDictionary *)dict
 {
     self=[super init];
