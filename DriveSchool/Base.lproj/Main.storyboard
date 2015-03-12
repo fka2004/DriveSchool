@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Abr-zb-gK9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Abr-zb-gK9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--社区-->
@@ -265,7 +265,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21/30人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="geg-mu-CGh">
-                                                    <rect key="frame" x="194" y="21" width="3260" height="21"/>
+                                                    <rect key="frame" x="194" y="21" width="3580" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -532,10 +532,10 @@
             </objects>
             <point key="canvasLocation" x="1847" y="-1341"/>
         </scene>
-        <!--View Controller-->
+        <!--School Detail View Controller-->
         <scene sceneID="Gvg-yT-zuk">
             <objects>
-                <viewController id="3qD-XX-o8a" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DSSchoolDetailViewController" id="3qD-XX-o8a" customClass="DSSchoolDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gPE-fs-IZD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -650,6 +650,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="uUd-wV-J1d" id="dyl-fa-9dY"/>
+                        <outlet property="bannerScrollView" destination="KkM-Pj-iHw" id="6l8-Lf-q5R"/>
+                        <outlet property="moneyLabel" destination="m8V-g6-Fkb" id="gNW-iJ-Hav"/>
+                        <outlet property="pageControl" destination="wXH-2a-s5w" id="QmI-ac-2zL"/>
+                        <outlet property="schoolInfoName" destination="Hs0-ds-Bhv" id="wE5-Yu-1mI"/>
+                        <outlet property="schoolInfoTextView" destination="Vv5-05-5ZF" id="Icx-cQ-Kxg"/>
+                        <outlet property="schoolName" destination="COi-HZ-W7i" id="xQQ-T9-bqG"/>
+                        <outlet property="scrollView" destination="5bD-iS-Kl2" id="9E0-HT-H7z"/>
+                        <outlet property="telLabel" destination="cce-Wq-KZ4" id="aPI-Pw-FdU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCn-Bi-yKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -898,14 +909,14 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新2015年驾校科目四安全常识" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lku-zw-vnP">
-                                                            <rect key="frame" x="99" y="9" width="3106" height="28"/>
+                                                            <rect key="frame" x="99" y="9" width="3426" height="28"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   长春学车选汇通驾校，不管是学自动挡还是学手动挡，特惠班3000元一票到底，每天练车1小时，最快3个月可拿证！" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uJg-dk-EON">
-                                                            <rect key="frame" x="99" y="31" width="5260" height="48"/>
+                                                            <rect key="frame" x="99" y="31" width="5580" height="48"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

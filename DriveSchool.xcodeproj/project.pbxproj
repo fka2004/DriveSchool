@@ -19,6 +19,7 @@
 		0018650D1A938175001ED251 /* icon_driveSchool_teacherSix@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 001865041A938175001ED251 /* icon_driveSchool_teacherSix@2x.jpg */; };
 		0018650E1A938175001ED251 /* icon_driveSchool_teacherThree@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 001865051A938175001ED251 /* icon_driveSchool_teacherThree@2x.jpg */; };
 		0018650F1A938175001ED251 /* icon_driveSchool_teacherTwo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 001865061A938175001ED251 /* icon_driveSchool_teacherTwo@2x.jpg */; };
+		0046512F1AB1AAA3003F6E06 /* DSSchoolDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046512E1AB1AAA3003F6E06 /* DSSchoolDetailViewController.m */; };
 		0092275D1A88656F001460E2 /* image_main_news_one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092274D1A88656F001460E2 /* image_main_news_one@2x.png */; };
 		0092275E1A88656F001460E2 /* image_main_news_two@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092274E1A88656F001460E2 /* image_main_news_two@2x.png */; };
 		0092275F1A88656F001460E2 /* icon_main_banner_one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092274F1A88656F001460E2 /* icon_main_banner_one@2x.png */; };
@@ -165,6 +166,8 @@
 		001865041A938175001ED251 /* icon_driveSchool_teacherSix@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icon_driveSchool_teacherSix@2x.jpg"; sourceTree = "<group>"; };
 		001865051A938175001ED251 /* icon_driveSchool_teacherThree@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icon_driveSchool_teacherThree@2x.jpg"; sourceTree = "<group>"; };
 		001865061A938175001ED251 /* icon_driveSchool_teacherTwo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icon_driveSchool_teacherTwo@2x.jpg"; sourceTree = "<group>"; };
+		0046512D1AB1AAA3003F6E06 /* DSSchoolDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSchoolDetailViewController.h; sourceTree = "<group>"; };
+		0046512E1AB1AAA3003F6E06 /* DSSchoolDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSchoolDetailViewController.m; sourceTree = "<group>"; };
 		0092274D1A88656F001460E2 /* image_main_news_one@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_main_news_one@2x.png"; sourceTree = "<group>"; };
 		0092274E1A88656F001460E2 /* image_main_news_two@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_main_news_two@2x.png"; sourceTree = "<group>"; };
 		0092274F1A88656F001460E2 /* icon_main_banner_one@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_main_banner_one@2x.png"; sourceTree = "<group>"; };
@@ -869,6 +872,8 @@
 				00C2B0961AA6E04600F2AC61 /* DSFindSchoolViewController.m */,
 				00C2B0981AA6E06B00F2AC61 /* DSFindSchoolTableViewCell.h */,
 				00C2B0991AA6E06B00F2AC61 /* DSFindSchoolTableViewCell.m */,
+				0046512D1AB1AAA3003F6E06 /* DSSchoolDetailViewController.h */,
+				0046512E1AB1AAA3003F6E06 /* DSSchoolDetailViewController.m */,
 			);
 			name = findSchool;
 			sourceTree = "<group>";
@@ -1166,6 +1171,7 @@
 				009229CD1A889566001460E2 /* MJRefreshHeaderView.m in Sources */,
 				00ECBF2A1A87935D009F262E /* DSMainTableViewCell.m in Sources */,
 				009229CA1A889566001460E2 /* MJRefreshBaseView.m in Sources */,
+				0046512F1AB1AAA3003F6E06 /* DSSchoolDetailViewController.m in Sources */,
 				009229CF1A889566001460E2 /* UIScrollView+MJRefresh.m in Sources */,
 				009229D41A889566001460E2 /* SDWebImageCompat.m in Sources */,
 				009229D81A889566001460E2 /* SDWebImageManager.m in Sources */,
