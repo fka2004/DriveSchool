@@ -7,7 +7,7 @@
 //
 
 #import "DSNewSubjectOneViewController.h"
-
+#import "DemoViewController.h"
 @interface DSNewSubjectOneViewController ()
 
 @end
@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
+    NSLog(@"ddddd");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,4 +37,11 @@
 }
 */
 
+- (IBAction)btnClick:(UIButton *)sender {
+    
+    DemoViewController*demo=[[DemoViewController alloc]init];
+    [self.navigationController pushViewController:demo animated:YES];
+    
+    
+}
 @end

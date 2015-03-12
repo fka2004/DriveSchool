@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EFE0C895-C0DF-4A05-9843-D5717B830AFC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DriveSchool</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>036E2142ED40A646D9B2FFD2B81FE0A4C01A69DD</key>
+		<string>https://github.com/gaovilla/DriveSchool.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DriveSchool.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>036E2142ED40A646D9B2FFD2B81FE0A4C01A69DD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/gaovilla/DriveSchool.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>036E2142ED40A646D9B2FFD2B81FE0A4C01A69DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>036E2142ED40A646D9B2FFD2B81FE0A4C01A69DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DriveSchool</string>
+		</dict>
+	</array>
+</dict>
+</plist>

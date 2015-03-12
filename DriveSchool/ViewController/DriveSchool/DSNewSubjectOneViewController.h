@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DSNewSubjectOneViewController : UIViewController
+- (IBAction)btnClick:(UIButton *)sender;
 
 @end
