@@ -26,7 +26,13 @@
 #import "NSDictionary+Util.h"
 #import "UIButton+Border.h"
 #import "env_dev.h"
+#import "UIButton+WebCache.h"
+#import "UIImageView+Addition.h"
+#import "XGPush.h"
+#import "MTA.h"
+#import "MTAConfig.h"
 
+#define LOCAL_TEST YES                  //标示是否是本地测试
 
 //#定义打印日志方法，在只DEBUG时打印LOG
 #ifdef DEBUG

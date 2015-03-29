@@ -41,9 +41,12 @@ static NSString * const kAPI_BASE_TWO_URL = @"http://xg.pk.bitbao.net";
 
 //新版本API
 static  NSString * kAPP_VERSION_INFO = @"Fir.im 内测版";
-//用户反馈
+//登录测试
 static NSString * const kAPI_TEST_LOGIN = @"/driving-school-web/app/login";
-
-static NSString * const kAPI_ACTIVITY_GETDETAIL = @"/yundong/yd_info/getActivityDetail.json";
-
+//首页接口
+static NSString * const kAPI_GET_MAIN = @"/driving-school-web/app/index";
+//找驾校
+static NSString * const kAPI_GET_SCHOOL = @"/driving-school-web/app/findDrivingSchool";
+//找教练
+static NSString * const kAPI_GET_TEACHER = @"/driving-school-web/app/findTeacher";
 #endif

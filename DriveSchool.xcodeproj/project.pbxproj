@@ -20,6 +20,7 @@
 		0018650E1A938175001ED251 /* icon_driveSchool_teacherThree@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 001865051A938175001ED251 /* icon_driveSchool_teacherThree@2x.jpg */; };
 		0018650F1A938175001ED251 /* icon_driveSchool_teacherTwo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 001865061A938175001ED251 /* icon_driveSchool_teacherTwo@2x.jpg */; };
 		0046512F1AB1AAA3003F6E06 /* DSSchoolDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046512E1AB1AAA3003F6E06 /* DSSchoolDetailViewController.m */; };
+		007577FB1AC2C51D00696386 /* DSSubjectTwoDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 007577FA1AC2C51D00696386 /* DSSubjectTwoDetailTableViewCell.m */; };
 		0092275D1A88656F001460E2 /* image_main_news_one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092274D1A88656F001460E2 /* image_main_news_one@2x.png */; };
 		0092275E1A88656F001460E2 /* image_main_news_two@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092274E1A88656F001460E2 /* image_main_news_two@2x.png */; };
 		0092275F1A88656F001460E2 /* icon_main_banner_one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092274F1A88656F001460E2 /* icon_main_banner_one@2x.png */; };
@@ -107,6 +108,14 @@
 		00B9668A1A97506E00F3D7AF /* DSTeacherDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B966891A97506E00F3D7AF /* DSTeacherDataTableViewCell.m */; };
 		00B9668D1A9752E400F3D7AF /* icon_subjectTwo_time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B9668C1A9752E400F3D7AF /* icon_subjectTwo_time@2x.png */; };
 		00BAEB9A1AA8667600878C0D /* DSTeacherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BAEB991AA8667600878C0D /* DSTeacherDetailViewController.m */; };
+		00BBFDCA1AC3E4B70058EE9D /* libmtasdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BBFDC41AC3E4B70058EE9D /* libmtasdk.a */; };
+		00BBFDCB1AC3E4B80058EE9D /* libXG-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BBFDC51AC3E4B70058EE9D /* libXG-SDK.a */; };
+		00BBFDCD1AC3E5050058EE9D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BBFDCC1AC3E5050058EE9D /* CFNetwork.framework */; };
+		00BBFDCF1AC3E5A40058EE9D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BBFDCE1AC3E5A40058EE9D /* SystemConfiguration.framework */; };
+		00BBFDD11AC3E5B30058EE9D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BBFDD01AC3E5B30058EE9D /* CoreTelephony.framework */; };
+		00BBFDD31AC3E5D80058EE9D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BBFDD21AC3E5D80058EE9D /* Security.framework */; };
+		00BF32661AB6BF9D008DF3E6 /* DSSubjectTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF32651AB6BF9D008DF3E6 /* DSSubjectTwoTableViewCell.m */; };
+		00BF32741AB6E716008DF3E6 /* UIImageView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF32731AB6E716008DF3E6 /* UIImageView+Addition.m */; };
 		00C0821B1A9E1DD6008D21B1 /* bg_community@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00C0821A1A9E1DD6008D21B1 /* bg_community@2x.jpg */; };
 		00C082201A9E2AE5008D21B1 /* image_main_news_five@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00C0821C1A9E2AE5008D21B1 /* image_main_news_five@2x.jpg */; };
 		00C082211A9E2AE5008D21B1 /* image_main_news_four@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00C0821D1A9E2AE5008D21B1 /* image_main_news_four@2x.jpg */; };
@@ -130,6 +139,9 @@
 		00C2B0971AA6E04600F2AC61 /* DSFindSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2B0961AA6E04600F2AC61 /* DSFindSchoolViewController.m */; };
 		00C2B09A1AA6E06B00F2AC61 /* DSFindSchoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2B0991AA6E06B00F2AC61 /* DSFindSchoolTableViewCell.m */; };
 		00C2B09F1AA6F0F200F2AC61 /* DSNewStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2B09E1AA6F0F200F2AC61 /* DSNewStudentViewController.m */; };
+		00C2C5FF1AC2592300D51A72 /* DSSubjectTwoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C5FE1AC2592300D51A72 /* DSSubjectTwoDetailViewController.m */; };
+		00C2C6051AC25A2200D51A72 /* DIDatepicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C6021AC25A2200D51A72 /* DIDatepicker.m */; };
+		00C2C6061AC25A2200D51A72 /* DIDatepickerDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C6041AC25A2200D51A72 /* DIDatepickerDateView.m */; };
 		00C9844F1A88DB8900723AF4 /* DSDtiveSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C9844E1A88DB8900723AF4 /* DSDtiveSchoolViewController.m */; };
 		00ECBEBF1A87650C009F262E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECBEBE1A87650C009F262E /* main.m */; };
 		00ECBEC21A87650C009F262E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECBEC11A87650C009F262E /* AppDelegate.m */; };
@@ -199,6 +211,8 @@
 		001865061A938175001ED251 /* icon_driveSchool_teacherTwo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icon_driveSchool_teacherTwo@2x.jpg"; sourceTree = "<group>"; };
 		0046512D1AB1AAA3003F6E06 /* DSSchoolDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSchoolDetailViewController.h; sourceTree = "<group>"; };
 		0046512E1AB1AAA3003F6E06 /* DSSchoolDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSchoolDetailViewController.m; sourceTree = "<group>"; };
+		007577F91AC2C51D00696386 /* DSSubjectTwoDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSubjectTwoDetailTableViewCell.h; sourceTree = "<group>"; };
+		007577FA1AC2C51D00696386 /* DSSubjectTwoDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSubjectTwoDetailTableViewCell.m; sourceTree = "<group>"; };
 		0092274D1A88656F001460E2 /* image_main_news_one@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_main_news_one@2x.png"; sourceTree = "<group>"; };
 		0092274E1A88656F001460E2 /* image_main_news_two@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_main_news_two@2x.png"; sourceTree = "<group>"; };
 		0092274F1A88656F001460E2 /* icon_main_banner_one@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_main_banner_one@2x.png"; sourceTree = "<group>"; };
@@ -365,6 +379,20 @@
 		00B9668C1A9752E400F3D7AF /* icon_subjectTwo_time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_subjectTwo_time@2x.png"; sourceTree = "<group>"; };
 		00BAEB981AA8667600878C0D /* DSTeacherDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTeacherDetailViewController.h; sourceTree = "<group>"; };
 		00BAEB991AA8667600878C0D /* DSTeacherDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTeacherDetailViewController.m; sourceTree = "<group>"; };
+		00BBFDC41AC3E4B70058EE9D /* libmtasdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmtasdk.a; sourceTree = "<group>"; };
+		00BBFDC51AC3E4B70058EE9D /* libXG-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libXG-SDK.a"; sourceTree = "<group>"; };
+		00BBFDC61AC3E4B70058EE9D /* MTA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTA.h; sourceTree = "<group>"; };
+		00BBFDC71AC3E4B70058EE9D /* MTAConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAConfig.h; sourceTree = "<group>"; };
+		00BBFDC81AC3E4B70058EE9D /* XGPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGPush.h; sourceTree = "<group>"; };
+		00BBFDC91AC3E4B70058EE9D /* XGSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGSetting.h; sourceTree = "<group>"; };
+		00BBFDCC1AC3E5050058EE9D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		00BBFDCE1AC3E5A40058EE9D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		00BBFDD01AC3E5B30058EE9D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		00BBFDD21AC3E5D80058EE9D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		00BF32641AB6BF9D008DF3E6 /* DSSubjectTwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSubjectTwoTableViewCell.h; sourceTree = "<group>"; };
+		00BF32651AB6BF9D008DF3E6 /* DSSubjectTwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSubjectTwoTableViewCell.m; sourceTree = "<group>"; };
+		00BF32721AB6E716008DF3E6 /* UIImageView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Addition.h"; sourceTree = "<group>"; };
+		00BF32731AB6E716008DF3E6 /* UIImageView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Addition.m"; sourceTree = "<group>"; };
 		00C0821A1A9E1DD6008D21B1 /* bg_community@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_community@2x.jpg"; sourceTree = "<group>"; };
 		00C0821C1A9E2AE5008D21B1 /* image_main_news_five@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "image_main_news_five@2x.jpg"; sourceTree = "<group>"; };
 		00C0821D1A9E2AE5008D21B1 /* image_main_news_four@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "image_main_news_four@2x.jpg"; sourceTree = "<group>"; };
@@ -402,6 +430,12 @@
 		00C2B0991AA6E06B00F2AC61 /* DSFindSchoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSFindSchoolTableViewCell.m; sourceTree = "<group>"; };
 		00C2B09D1AA6F0F200F2AC61 /* DSNewStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSNewStudentViewController.h; sourceTree = "<group>"; };
 		00C2B09E1AA6F0F200F2AC61 /* DSNewStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSNewStudentViewController.m; sourceTree = "<group>"; };
+		00C2C5FD1AC2592300D51A72 /* DSSubjectTwoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSubjectTwoDetailViewController.h; sourceTree = "<group>"; };
+		00C2C5FE1AC2592300D51A72 /* DSSubjectTwoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSubjectTwoDetailViewController.m; sourceTree = "<group>"; };
+		00C2C6011AC25A2200D51A72 /* DIDatepicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIDatepicker.h; sourceTree = "<group>"; };
+		00C2C6021AC25A2200D51A72 /* DIDatepicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIDatepicker.m; sourceTree = "<group>"; };
+		00C2C6031AC25A2200D51A72 /* DIDatepickerDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIDatepickerDateView.h; sourceTree = "<group>"; };
+		00C2C6041AC25A2200D51A72 /* DIDatepickerDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIDatepickerDateView.m; sourceTree = "<group>"; };
 		00C9844D1A88DB8900723AF4 /* DSDtiveSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSDtiveSchoolViewController.h; sourceTree = "<group>"; };
 		00C9844E1A88DB8900723AF4 /* DSDtiveSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSDtiveSchoolViewController.m; sourceTree = "<group>"; };
 		00ECBEB91A87650C009F262E /* DriveSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -469,12 +503,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00BBFDD31AC3E5D80058EE9D /* Security.framework in Frameworks */,
+				18BC5F851AB1F79700D82CF1 /* libz.dylib in Frameworks */,
+				00BBFDD11AC3E5B30058EE9D /* CoreTelephony.framework in Frameworks */,
+				00BBFDCF1AC3E5A40058EE9D /* SystemConfiguration.framework in Frameworks */,
+				00BBFDCD1AC3E5050058EE9D /* CFNetwork.framework in Frameworks */,
 				18BC5F8B1AB1F7B900D82CF1 /* Foundation.framework in Frameworks */,
+				00BBFDCA1AC3E4B70058EE9D /* libmtasdk.a in Frameworks */,
 				18BC5F891AB1F7B000D82CF1 /* UIKit.framework in Frameworks */,
 				18BC5F871AB1F7A600D82CF1 /* MobileCoreServices.framework in Frameworks */,
-				18BC5F851AB1F79700D82CF1 /* libz.dylib in Frameworks */,
 				18BC5F831AB1F78C00D82CF1 /* QuartzCore.framework in Frameworks */,
 				18BC5F811AB1F78200D82CF1 /* CoreGraphics.framework in Frameworks */,
+				00BBFDCB1AC3E4B80058EE9D /* libXG-SDK.a in Frameworks */,
 				18BC5F7F1AB1F77700D82CF1 /* libsqlite3.dylib in Frameworks */,
 				009229E41A889566001460E2 /* libWeChatSDK.a in Frameworks */,
 				009229C71A889566001460E2 /* libWeiboSDK.a in Frameworks */,
@@ -583,6 +623,8 @@
 		009229351A889566001460E2 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				00BBFDC31AC3E4B70058EE9D /* XGPush */,
+				00C2C6001AC25A2200D51A72 /* DatePicker */,
 				18BC5FB41AB1F93600D82CF1 /* FMDB */,
 				00C2B06A1AA5859A00F2AC61 /* SCNavTabBar */,
 				009229361A889566001460E2 /* AFNetworking */,
@@ -845,6 +887,19 @@
 			path = subjectTwo;
 			sourceTree = "<group>";
 		};
+		00BBFDC31AC3E4B70058EE9D /* XGPush */ = {
+			isa = PBXGroup;
+			children = (
+				00BBFDC41AC3E4B70058EE9D /* libmtasdk.a */,
+				00BBFDC51AC3E4B70058EE9D /* libXG-SDK.a */,
+				00BBFDC61AC3E4B70058EE9D /* MTA.h */,
+				00BBFDC71AC3E4B70058EE9D /* MTAConfig.h */,
+				00BBFDC81AC3E4B70058EE9D /* XGPush.h */,
+				00BBFDC91AC3E4B70058EE9D /* XGSetting.h */,
+			);
+			path = XGPush;
+			sourceTree = "<group>";
+		};
 		00C082191A9E1DD6008D21B1 /* community */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,6 +967,12 @@
 			children = (
 				00C2B0821AA58CF400F2AC61 /* DSNewSubjectTwoViewController.h */,
 				00C2B0831AA58CF400F2AC61 /* DSNewSubjectTwoViewController.m */,
+				00BF32641AB6BF9D008DF3E6 /* DSSubjectTwoTableViewCell.h */,
+				00BF32651AB6BF9D008DF3E6 /* DSSubjectTwoTableViewCell.m */,
+				00C2C5FD1AC2592300D51A72 /* DSSubjectTwoDetailViewController.h */,
+				00C2C5FE1AC2592300D51A72 /* DSSubjectTwoDetailViewController.m */,
+				007577F91AC2C51D00696386 /* DSSubjectTwoDetailTableViewCell.h */,
+				007577FA1AC2C51D00696386 /* DSSubjectTwoDetailTableViewCell.m */,
 			);
 			name = two;
 			sourceTree = "<group>";
@@ -969,6 +1030,17 @@
 			name = newStudent;
 			sourceTree = "<group>";
 		};
+		00C2C6001AC25A2200D51A72 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				00C2C6011AC25A2200D51A72 /* DIDatepicker.h */,
+				00C2C6021AC25A2200D51A72 /* DIDatepicker.m */,
+				00C2C6031AC25A2200D51A72 /* DIDatepickerDateView.h */,
+				00C2C6041AC25A2200D51A72 /* DIDatepickerDateView.m */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
 		00C9844C1A88D80000723AF4 /* DriveSchool */ = {
 			isa = PBXGroup;
 			children = (
@@ -985,6 +1057,10 @@
 		00ECBEB01A87650C009F262E = {
 			isa = PBXGroup;
 			children = (
+				00BBFDD21AC3E5D80058EE9D /* Security.framework */,
+				00BBFDD01AC3E5B30058EE9D /* CoreTelephony.framework */,
+				00BBFDCE1AC3E5A40058EE9D /* SystemConfiguration.framework */,
+				00BBFDCC1AC3E5050058EE9D /* CFNetwork.framework */,
 				00ECBEBB1A87650C009F262E /* DriveSchool */,
 				00ECBED51A87650C009F262E /* DriveSchoolTests */,
 				00ECBEBA1A87650C009F262E /* Products */,
@@ -1071,6 +1147,8 @@
 				0092277B1A889482001460E2 /* UIViewController+storyboard.m */,
 				00ECBEF11A876ED3009F262E /* UIButton+Border.h */,
 				00ECBEF21A876ED3009F262E /* UIButton+Border.m */,
+				00BF32721AB6E716008DF3E6 /* UIImageView+Addition.h */,
+				00BF32731AB6E716008DF3E6 /* UIImageView+Addition.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1208,7 +1286,7 @@
 				TargetAttributes = {
 					00ECBEB81A87650C009F262E = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 24FWL3GS7S;
+						DevelopmentTeam = SFEVXAF73Q;
 					};
 					00ECBED11A87650C009F262E = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -1327,6 +1405,7 @@
 				00C2B0901AA5AB8B00F2AC61 /* DSFindTeacherViewController.m in Sources */,
 				009229F31A88967A001460E2 /* AppUtil.m in Sources */,
 				18BC5FC41AB1F93600D82CF1 /* FMDatabaseAdditions.m in Sources */,
+				00BF32741AB6E716008DF3E6 /* UIImageView+Addition.m in Sources */,
 				00C2B0801AA58CAB00F2AC61 /* DSNewSubjectOneViewController.m in Sources */,
 				009229BF1A889566001460E2 /* UIImageView+AFNetworking.m in Sources */,
 				009229C41A889566001460E2 /* EasyJSDataFunction.m in Sources */,
@@ -1347,6 +1426,7 @@
 				00C9844F1A88DB8900723AF4 /* DSDtiveSchoolViewController.m in Sources */,
 				0092277C1A889482001460E2 /* UIActionSheet+Blocks.m in Sources */,
 				00B966851A96FD7500F3D7AF /* DSTeacherDateViewController.m in Sources */,
+				007577FB1AC2C51D00696386 /* DSSubjectTwoDetailTableViewCell.m in Sources */,
 				009229D31A889566001460E2 /* SDImageCache.m in Sources */,
 				00C2B0761AA5859A00F2AC61 /* SCNavTabBarController.m in Sources */,
 				18BC5FC51AB1F93600D82CF1 /* FMDatabasePool.m in Sources */,
@@ -1368,6 +1448,7 @@
 				009229F71A88967A001460E2 /* YDDateUtil.m in Sources */,
 				009229DD1A889566001460E2 /* UIImage+WebP.m in Sources */,
 				009229B31A889566001460E2 /* AFNetworkReachabilityManager.m in Sources */,
+				00C2C6051AC25A2200D51A72 /* DIDatepicker.m in Sources */,
 				009229E21A889566001460E2 /* readme.markdown in Sources */,
 				0092277F1A889482001460E2 /* UIImage+Additions.m in Sources */,
 				00C2B0971AA6E04600F2AC61 /* DSFindSchoolViewController.m in Sources */,
@@ -1376,6 +1457,7 @@
 				009229B61A889566001460E2 /* AFURLRequestSerialization.m in Sources */,
 				00C2B09F1AA6F0F200F2AC61 /* DSNewStudentViewController.m in Sources */,
 				00C2B0841AA58CF400F2AC61 /* DSNewSubjectTwoViewController.m in Sources */,
+				00C2C5FF1AC2592300D51A72 /* DSSubjectTwoDetailViewController.m in Sources */,
 				00C2B07C1AA58B5700F2AC61 /* DSMainSubjectViewController.m in Sources */,
 				00C2B0771AA5859A00F2AC61 /* SCNavTabBar.m in Sources */,
 				18BC5FC71AB1F93600D82CF1 /* FMResultSet.m in Sources */,
@@ -1401,11 +1483,13 @@
 				001864FC1A8F352E001ED251 /* DSSubjectTwoCollectionViewCell.m in Sources */,
 				009229F51A88967A001460E2 /* StrUtil.m in Sources */,
 				00BAEB9A1AA8667600878C0D /* DSTeacherDetailViewController.m in Sources */,
+				00C2C6061AC25A2200D51A72 /* DIDatepickerDateView.m in Sources */,
 				009229B41A889566001460E2 /* AFSecurityPolicy.m in Sources */,
 				009229D71A889566001460E2 /* SDWebImageDownloaderOperation.m in Sources */,
 				009229C21A889566001460E2 /* UIWebView+AFNetworking.m in Sources */,
 				00C2B09A1AA6E06B00F2AC61 /* DSFindSchoolTableViewCell.m in Sources */,
 				009229C61A889566001460E2 /* EasyJSWebViewProxyDelegate.m in Sources */,
+				00BF32661AB6BF9D008DF3E6 /* DSSubjectTwoTableViewCell.m in Sources */,
 				009229DF1A889566001460E2 /* UIImageView+WebCache.m in Sources */,
 				00ECBEC21A87650C009F262E /* AppDelegate.m in Sources */,
 				009227811A889482001460E2 /* UIViewController+storyboard.m in Sources */,
@@ -1543,6 +1627,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DriveSchool/Vendors/libWeiboSDK",
 					"$(PROJECT_DIR)/DriveSchool/Vendors/Wechat",
+					"$(PROJECT_DIR)/DriveSchool/Vendors/XGPush",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1562,6 +1647,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DriveSchool/Vendors/libWeiboSDK",
 					"$(PROJECT_DIR)/DriveSchool/Vendors/Wechat",
+					"$(PROJECT_DIR)/DriveSchool/Vendors/XGPush",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

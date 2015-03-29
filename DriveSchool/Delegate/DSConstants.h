@@ -10,6 +10,6 @@
 //本地保存token
 static  NSString * kAPP_LOCALDATA_USERTOKEN = @"kapp_localdata_usertoken";
 //api成功标识
-static const NSInteger  API_STATUS_OK = 0;
+static const NSString *API_STATUS_OK = @"SUCCESS";
 
 

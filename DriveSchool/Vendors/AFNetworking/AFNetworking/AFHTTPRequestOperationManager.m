@@ -153,6 +153,37 @@
 
     return operation;
 }
+- (AFHTTPRequestOperation *)POST:(NSString *)URLString
+                      jsonParameters:(id)parameters
+                         success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    NSMutableDictionary *parametersDic = parameters;
+    
+    
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parametersDic error:nil];
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
+    
+    [self.operationQueue addOperation:operation];
+    
+    return operation;
+}
+
+-(NSDictionary *)parameterToJson:(NSDictionary *)parameter{
+    NSMutableString *paramsStr = @"{";
+    for (NSString *key in parameter.allKeys) {
+        [paramsStr appendString:@"\""];
+        [paramsStr appendString:key];
+        [paramsStr appendString:@"\":\""];
+        [paramsStr appendString:[parameter objectForKey:key]];
+        [paramsStr appendString:@"\","];
+        
+    }
+    [paramsStr substringToIndex:paramsStr.length-1];
+    NSDictionary *dic = @{@"data":paramsStr};
+    
+    return dic;
+}
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
                       parameters:(id)parameters

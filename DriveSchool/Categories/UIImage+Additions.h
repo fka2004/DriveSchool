@@ -13,6 +13,6 @@
 + (UIImage *)imageWithHexColor:(NSInteger)hexValue;
 + (UIImage *)separatorWithHexColor:(NSInteger)hexValue1  andHexColor:(NSInteger)hexValue2;
 +(UIImage *)separatorInPostStep1;
-+(UIImageView *)setRound:(UIImageView *)imageView;
 + (UIImage *)imageWithColor:(UIColor *)color view:(UIView *)view;
+
 @end

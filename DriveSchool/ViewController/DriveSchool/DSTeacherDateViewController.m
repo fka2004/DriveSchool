@@ -76,9 +76,11 @@
         [cell.dataButton setBackgroundColor:[UIColor grayColor]];
     }
 
-    
-    
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *vc = [self getViewControllerFromStoryBoard:@"DSSubjectTwoDetailViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

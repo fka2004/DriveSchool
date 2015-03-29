@@ -649,5 +649,20 @@ CGSize CWSizeReduce(CGSize size, CGFloat limit)   // 按比例减少尺寸
     NSString *app_version=[NSString stringWithFormat:@"ios-%@(%@)-%@",outdoorversion,indoorversion,kAPP_VERSION_INFO];
     return app_version;
 }
-
++(NSDictionary *)parameterToJson:(NSDictionary *)parameter{
+    NSMutableString *paramsStr = [[NSMutableString alloc]initWithString:@"{"];
+    for (NSString *key in parameter.allKeys) {
+        [paramsStr appendString:@"\""];
+        [paramsStr appendString:key];
+        [paramsStr appendString:@"\":\""];
+        [paramsStr appendString:[parameter objectForKey:key]];
+        [paramsStr appendString:@"\","];
+        
+    }
+    paramsStr = [[NSMutableString alloc]initWithString:[paramsStr substringToIndex:paramsStr.length-1]];
+    [paramsStr appendString:@"}"];
+    NSDictionary *dic = @{@"data":paramsStr};
+    
+    return dic;
+}
 @end

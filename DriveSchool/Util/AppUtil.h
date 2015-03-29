@@ -29,4 +29,5 @@
 + (float) heightForString:(NSString *)value fontSize:(float)fontSize andWidth:(float)width;
 +(UIViewController *)getViewController:(UIView *)view;
 +(NSString *)getTime:(NSDate *)date;
++(NSDictionary *)parameterToJson:(NSDictionary *)parameter;
 @end
