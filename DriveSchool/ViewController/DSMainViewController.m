@@ -34,7 +34,15 @@
     [self initData];
 }
 -(void)initData{
-    NSDictionary *params = @{@"privince":@"吉林省",@"city":@"长春市"};
+    NSString *province = [[NSUserDefaults standardUserDefaults]stringForKey:kAPP_PROVINCE];
+    NSString *city = [[NSUserDefaults standardUserDefaults]stringForKey:kAPP_CITY];
+    if(!province){
+        province = @"吉林省";
+    }
+    if(!city){
+        city = @"长春市";
+    }
+    NSDictionary *params = @{@"privince":province,@"city":city};
     params = [AppUtil parameterToJson:params];
     
     [[AFNetworkKit sharedClient] POST:kAPI_GET_MAIN parameters:params success:^(NSURLSessionDataTask *  task, id json) {
@@ -65,6 +73,7 @@
 }
 
 -(void)initBanner{
+    _bannerView.frame = CGRectMake(0, _bannerView.frame.origin.y, CURRENT_WIDTH, 160);
     [_bannerView setContentSize:CGSizeMake(CURRENT_WIDTH*_bannerArray.count, 160)];
     
     for (int i = 0; i < _bannerArray.count; i++) {
@@ -88,7 +97,7 @@
     NSDictionary *itemTwo = @{@"name":@"找驾校",@"image":@"btn_main_item_two.png",@"url":@"http://baidu.com"};
     NSDictionary *itemThree = @{@"name":@"找教练",@"image":@"btn_main_item_three.png",@"url":@"http://baidu.com"};
     
-    [_functionItemArray addObject:itemOne];
+//    [_functionItemArray addObject:itemOne];
     [_functionItemArray addObject:itemTwo];
     [_functionItemArray addObject:itemThree];
 
@@ -96,19 +105,24 @@
         NSLog(@"%f",_functionItemView.frame.size.height);
         for (int i=0; i<_functionItemArray.count; i++) {
             NSDictionary *dic =  [_functionItemArray objectAtIndex:i];
-            
             int width = CURRENT_WIDTH / _functionItemArray.count;
             UIView *view = [[UIView alloc]initWithFrame:CGRectMake(width*i, 0, width, _functionItemView.frame.size.height)];
-            UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.width-40)];
+            UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, view.frame.size.width, _functionItemView.frame.size.height-10)];
             button.tag = i;
             [button setImage:[UIImage imageNamed:[dic objectForKey:@"image"]] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(clickFunctionItem:) forControlEvents:UIControlEventTouchUpInside];
             NSLog(@"%f",view.frame.size.width);
-            int offset = 25;
-            if(iPhone6){
-                offset = 18;
+            int offset = 18;
+            if(iPhone6plus){
+                offset = 15;
+                button.frame = CGRectMake(0, -5, view.frame.size.width, _functionItemView.frame.size.height-10);
+            }else if(iPhone4){
+                offset = 22;
+                button.frame = CGRectMake(0, -5, view.frame.size.width, _functionItemView.frame.size.height-10);
+            }else if(iPhone6){
+                offset = 20;
             }
-            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0,  view.frame.size.height-offset, view.frame.size.width, 10)];
+            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0,  view.frame.size.height-offset, view.frame.size.width, 20)];
             
             label.text = [dic objectForKey:@"name"];
 
@@ -142,10 +156,10 @@
 }
 -(void)clickFunctionItem:(UIButton *)button{
     NSLog(@"clickItem");
-    if(button.tag == 1){
+    if(button.tag == 0){
         UIViewController *vc = [self getViewControllerFromStoryBoard:@"DSFindSchoolViewController"];
         [self.navigationController pushViewController:vc animated:YES];
-    }else if(button.tag == 2){
+    }else if(button.tag == 1){
         UIViewController *vc = [self getViewControllerFromStoryBoard:@"DSFindTeacherViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -170,6 +184,7 @@
     
 }
 -(void)setDefaultValue{
+    self.navigationController.navigationBar.translucent = NO;
     [self.navigationController.navigationBar setBackgroundColor:[UIColor blueColor]];
     
     _tableItems = [[NSMutableArray alloc]init];
@@ -198,6 +213,7 @@
     if(!cell){
         cell = [[DSMainTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIndentifier];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.title.text = [dic nonNullValueForKey:@"title"];
     cell.content.text = [dic nonNullValueForKey:@"content"];
     NSString *imageUrl = [dic nonNullValueForKey:@"imageUrl"];
@@ -207,7 +223,14 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80.0;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+     NSDictionary *dic = [_tableItems objectAtIndex:indexPath.row];
+    UIViewController *vc = [self getViewControllerFromStoryBoard:@"YDNewsViewController"];
+    NSString *url = [[NSString alloc]initWithFormat:@"%@%@",kAPP_GET_NEWS,[dic nonNullValueForKey:@"id"]];
+    [vc.passedParams setObject:url forKey:@"url"];
+    [vc.passedParams setObject:[dic nonNullValueForKey:@"title"] forKey:@"title"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 /*
 #pragma mark - Navigation

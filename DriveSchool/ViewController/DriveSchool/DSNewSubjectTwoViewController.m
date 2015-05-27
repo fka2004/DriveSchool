@@ -1,4 +1,4 @@
-//
+ //
 //  DSNewSubjectTwoViewController.m
 //  DriveSchool
 //
@@ -22,15 +22,84 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setDefaultValue];
-    [self initData];
+//    [self initTestData];
+    [self initDataWithStart:@"0" size:@"15"];
+    [self initRefreshView];
 }
 -(void)setDefaultValue{
+    _usedTeachers = [[NSMutableArray alloc]init];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
 }
--(void)initData{
+-(void)initRefreshView{
+    [self.tableView addFooterWithTarget:self action:@selector(refreshBottom)];
+    self.tableView.footerPullToRefreshText = @"上拉加载";
+    self.tableView.footerReleaseToRefreshText = @"松开加载";
+    self.tableView.footerRefreshingText = @"加载中...";
+    
+    
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(refreshTop) color:[UIColor whiteColor]];
+    //    [self.tableView headerBeginRefreshing];
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.tableView.headerPullToRefreshText = @"下拉刷新";
+    self.tableView.headerReleaseToRefreshText = @"松开刷新";
+    self.tableView.headerRefreshingText = @"刷新中...";
+    
+}
+-(void)refreshTop{
+    NSString *size = [[NSString alloc]initWithFormat:@"%lu",(unsigned long)_teachersArray.count];
+    [self initDataWithStart:@"0" size:size];
+}
+-(void)refreshBottom{
+    NSString *size = [[NSString alloc]initWithFormat:@"%lu",_teachersArray.count + 15];
+    [self initDataWithStart:@"0" size:size];
+}
+-(void)initDataWithStart:(NSString *)start size:(NSString *)size{
+    NSString *uid = [[NSUserDefaults standardUserDefaults]stringForKey:kAPP_LOCALDATA_UID];
+    NSString *isBind = [[NSUserDefaults standardUserDefaults]stringForKey:kAPP_IS_BIND_SCHOOL];
+    NSString *province = [[NSUserDefaults standardUserDefaults]stringForKey:kAPP_PROVINCE];
+    NSString *city = [[NSUserDefaults standardUserDefaults]stringForKey:kAPP_CITY];
+    NSDictionary *params = @{@"userId":uid,@"subject":@"2",@"privince":province,@"city":city,@"district":@"",@"startIndex":start,@"endIndex":size};
+    if(!isBind){
+        params = @{@"privince":province,@"city":city,@"district":@"",@"startIndex":start,@"endIndex":size};
+    }
+    //    NSDictionary *params = @{@"privince":@"",@"city":@""};
+    params = [AppUtil parameterToJson:params];
+    [self.view makeToastActivity];
+    [[AFNetworkKit sharedClient] POST:kAPI_GET_SUBJECT_TEACHER parameters:params success:^(NSURLSessionDataTask *  task, id json) {
+        //SUCCESS
+        NSLog(@"%@",json);
+        NSString *status = [json nonNullObjectForKey:@"resultCode"];
+        if([status isEqualToString:API_STATUS_OK]){
+            NSLog(@"成功");
+            _usedTeachers = [json nonNullValueForKey:@"teacherInfolHisList"];
+            _teachersArray = [json nonNullValueForKey:@"teacherInfolList"];
+            
+            [_tableView reloadData];
+            [self.tableView footerEndRefreshing];
+            [self.tableView headerEndRefreshing];
+        }else{
+            NSLog(@"失败");
+            NSString *error = [json nonNullValueForKey:@"retMsg"];
+            [self.view makeToast:error];
+        }
+        [self.view hideToastActivity];
+    } failure:^(NSURLSessionDataTask * task, NSError *error) {
+        //fail
+        
+        NSString * message = [AFNetworkKit getMessageWithResponse:task.response Error:error];
+        NSLog(@"%@",message);
+        [self.tableView footerEndRefreshing];
+        [self.tableView headerEndRefreshing];
+        [self.view hideToastActivity];
+    }];
+
+}
+
+-(void)initTestData{
     _usedTeachers = [[NSMutableArray alloc]init];
     _teachersArray = [[NSMutableArray alloc]init];
     
@@ -70,9 +139,12 @@
 //}
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if(section == 0){
+        if(_usedTeachers.count==0){
+             return 0;
+        }
         return 30;
     }else{
-        return 10;
+        return 30;
     }
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -86,7 +158,8 @@
         title.text = @"曾预约的教练";
         sectionView.frame = CGRectMake(0, 0, CURRENT_WIDTH, 80);
     }else{
-        sectionView.frame = CGRectMake(0, 0, CURRENT_WIDTH, 30);
+        title.text = @"所有教练";
+        sectionView.frame = CGRectMake(0, 0, CURRENT_WIDTH, 80);
     }
     [sectionView addSubview:title];
     return sectionView;
@@ -107,11 +180,13 @@
         teacherInfo =  [_teachersArray objectAtIndex:indexPath.row];
     }
     
-    cell.nameLabel.text = [teacherInfo objectForKey:@"name"];
+    cell.nameLabel.text = [teacherInfo objectForKey:@"realName"];
     cell.teachAge.text =  [[NSString alloc]initWithFormat:@"教龄:%li年",(long)[[teacherInfo objectForKey:@"teachAge"]integerValue]];
     NSInteger limit = [[teacherInfo objectForKey:@"limit"]integerValue];
     NSInteger count = [[teacherInfo objectForKey:@"count"]integerValue];
     [cell.reservationButton setTitle:@"预约" forState:UIControlStateNormal];
+    cell.reservationButton.tag = indexPath.section *100+indexPath.row;
+    [cell.reservationButton addTarget:self action:@selector(clickBookingButton:) forControlEvents:UIControlEventTouchUpInside];
     /*
     //这里不需要做是否已满的判断,因为没有指定时间
     if(count == limit){
@@ -122,17 +197,57 @@
         [cell.reservationButton setBackgroundColor:[UIColor colorWithHex:0x406ed2]];
     }
      */
-    [cell.teacherPhoto setImage:[UIImage imageNamed:[teacherInfo objectForKey:@"photo"]]];
-    cell.teacherPhoto = [UIImageView setImageViewRound:cell.teacherPhoto radius:cell.teacherPhoto.frame.size.width/2];
-//    cell.teacherPhoto = [UIImageView setImageViewRound:cell.teacherPhoto radius:cell.teacherPhoto.frame.size.width/10];
-//    [cell.teacherPhoto sd_setImageWithURL:[NSURL URLWithString:[teacherInfo objectForKey:@"photo"]] placeholderImage:nil];
-    
-    
-    
+    [cell.teacherPhoto sd_setImageWithURL:[NSURL URLWithString:[teacherInfo objectForKey:@"photoUrl"]] placeholderImage:nil];
+    cell.teacherPhoto = [UIImageView setImageViewRound:cell.teacherPhoto radius:cell.teacherPhoto.frame.size.width/10];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self goDetailView:indexPath];
+}
+-(void)clickBookingButton:(UIButton *)button{
+    NSInteger section = button.tag/100;
+    NSInteger row = button.tag%100;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+    
+   [self goDetailView:indexPath];
+    
+}
+-(void)goDetailView:(NSIndexPath *)indexPath{
+    NSString *isBind = [[NSUserDefaults standardUserDefaults]stringForKey:kAPP_IS_BIND_SCHOOL];
+    if(!isBind){
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"需要绑定驾校才能使用预约功能" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertView showWithHandler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+            if(buttonIndex == 1){
+                UIViewController *vc = [self getViewControllerFromStoryBoard:@"DSBindingTelViewController"];
+                [vc.passedParams setObject:@"app" forKey:@"from"];
+                [self presentViewController:vc animated:YES completion:^{
+                    
+                }];
+            }
+        }];
+        return;
+    }
     UIViewController *vc = [self getViewControllerFromStoryBoard:@"DSSubjectTwoDetailViewController"];
+    NSString *teacherId;
+    NSString *photo;
+    NSString *teacherAge;
+    NSString *name;
+    if(indexPath.section == 0){
+        teacherId = [[_usedTeachers objectAtIndex:indexPath.row]objectForKey:@"id"];
+        photo = [[_usedTeachers objectAtIndex:indexPath.row]objectForKey:@"photoUrl"];
+        teacherAge = [[_usedTeachers objectAtIndex:indexPath.row]objectForKey:@"teachAge"];
+        name = [[_usedTeachers objectAtIndex:indexPath.row]objectForKey:@"realName"];
+    }else{
+        teacherId = [[_teachersArray objectAtIndex:indexPath.row]objectForKey:@"id"];
+        photo = [[_teachersArray objectAtIndex:indexPath.row]objectForKey:@"photoUrl"];
+        teacherAge = [[_teachersArray objectAtIndex:indexPath.row]objectForKey:@"teachAge"];
+        name = [[_teachersArray objectAtIndex:indexPath.row]objectForKey:@"realName"];
+    }
+    [vc.passedParams setObject:teacherId forKey:@"teacherId"];
+    [vc.passedParams setObject:photo forKey:@"photoUrl"];
+    [vc.passedParams setObject:teacherAge forKey:@"teachAge"];
+    [vc.passedParams setObject:name forKey:@"realName"];
+    [vc.passedParams setObject:@"2" forKey:@"subject"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 /*

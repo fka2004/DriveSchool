@@ -11,7 +11,7 @@
 @implementation DSFindSchoolTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    _moneyLabel.frame = CGRectMake(CURRENT_WIDTH-_moneyLabel.frame.size.width-20, _moneyLabel.frame.origin.y, _moneyLabel.frame.size.width, _moneyLabel.frame.size.height);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

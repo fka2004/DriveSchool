@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DSLoginContainer.h"
 
 @interface AppDelegate ()
 
@@ -124,6 +125,15 @@
     //初始化MTA
     //[[MTAConfig getInstance] setDebugEnable:TRUE];
     [MTA startWithAppkey:@"IG4BJ2YGZ14F"];
+    
+    
+    //注册微博
+    [WeiboSDK registerApp:WB_APP_ID];
+    
+    NSString *uid = [[NSUserDefaults standardUserDefaults]stringForKey:kAPP_LOCALDATA_UID];
+    if(uid){
+        [self go_main_page];
+    }
     return YES;
 }
 
@@ -211,7 +221,21 @@
      [XGPush handleReceiveNotification:userInfo successCallback:successBlock errorCallback:errorBlock completion:completion];
      */
 }
+//微博登录重写
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BTLog(@"opneURL:%@",url.scheme);
+    id<WeiboSDKDelegate>  obj = (id<WeiboSDKDelegate>)[DSLoginContainer getloginDelegate];
+    return [WeiboSDK handleOpenURL:url delegate:obj];
+}
+-(void)go_main_page{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
 
-
-
+}
 @end

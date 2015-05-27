@@ -9,6 +9,8 @@
 #import "DSFindSchoolViewController.h"
 #import "DSFindSchoolTableViewCell.h"
 
+
+
 @interface DSFindSchoolViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *schoolArray;
@@ -21,15 +23,45 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setDefaultValue];
-    [self initData];
+    [self initRefreshView];
+    [self initDataWithStart:@"0" size:@"15"];
 }
 -(void)setDefaultValue{
+    self.title = @"找驾校";
     _schoolArray = [[NSMutableArray alloc]init];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    
 }
--(void)initData{
-    NSDictionary *params = @{@"privince":@"吉林省",@"city":@"长春市",@"district":@"朝阳区"};
+-(void)initRefreshView{
+    [self.tableView addFooterWithTarget:self action:@selector(refreshBottom)];
+    self.tableView.footerPullToRefreshText = @"上拉加载";
+    self.tableView.footerReleaseToRefreshText = @"松开加载";
+    self.tableView.footerRefreshingText = @"加载中...";
+    
+    
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(refreshTop) color:[UIColor whiteColor]];
+    //    [self.tableView headerBeginRefreshing];
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.tableView.headerPullToRefreshText = @"下拉刷新";
+    self.tableView.headerReleaseToRefreshText = @"松开加载";
+    self.tableView.headerRefreshingText = @"加载中...";
+    
+}
+-(void)refreshTop{
+    NSString *size = [[NSString alloc]initWithFormat:@"%lu",(unsigned long)_schoolArray.count];
+    [self initDataWithStart:@"0" size:size];
+}
+-(void)refreshBottom{
+    NSString *size = [[NSString alloc]initWithFormat:@"%lu",_schoolArray.count + 15];
+    [self initDataWithStart:@"0" size:size];
+}
+-(void)initDataWithStart:(NSString *)start size:(NSString *)size{
+    NSString *province = [[NSUserDefaults standardUserDefaults]stringForKey:kAPP_PROVINCE];
+    NSString *city = [[NSUserDefaults standardUserDefaults]stringForKey:kAPP_CITY];
+    NSDictionary *params = @{@"privince":province,@"city":city,@"district":@"",@"startIndex":start,@"endIndex":size};
+//    NSDictionary *params = @{@"privince":@"",@"city":@"",@"district":@"",@"startIndex":@"1",@"endIndex":@"10"};
     params = [AppUtil parameterToJson:params];
     [self.view makeToastActivity];
     [[AFNetworkKit sharedClient] POST:kAPI_GET_SCHOOL parameters:params success:^(NSURLSessionDataTask *  task, id json) {
@@ -71,14 +103,19 @@
     NSDictionary *schoolInfo = [_schoolArray objectAtIndex:indexPath.row];
     
     cell.nameLabel.text = [schoolInfo objectForKey:@"drivingSchoolName"];
-    cell.studentNumLabel.text = [[NSString alloc]initWithFormat:@"%@人",[schoolInfo objectForKey:@"introduction"]];
+    cell.studentNumLabel.text = [[NSString alloc]initWithFormat:@"%@人",[schoolInfo objectForKey:@"studentNumber"]];
     cell.addressLabel.text = [[NSString alloc]initWithFormat:@"%@，",[schoolInfo objectForKey:@"address"]];
     [cell.photoImage sd_setImageWithURL:[NSURL URLWithString:[schoolInfo objectForKey:@"imageUrl"]] placeholderImage:nil];
-    cell.moneyLabel.text =[[NSString alloc]initWithFormat:@"￥%@",[schoolInfo objectForKey:@"price"]];
+    NSInteger price = [[schoolInfo objectForKey:@"price"]integerValue];
+    cell.moneyLabel.text =[[NSString alloc]initWithFormat:@"￥%i",price];
+    cell.photoImage = [UIImageView setImageViewRound:cell.photoImage radius:cell.photoImage.frame.size.width/10];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+//    DSSchoolDetailViewController *
+    UIViewController *vc = [self getViewControllerFromStoryBoard:@"DSSchoolDetailViewController"];
+    [vc.passedParams setObject:[_schoolArray objectAtIndex:indexPath.row] forKey:@"school"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 /*
 #pragma mark - Navigation
