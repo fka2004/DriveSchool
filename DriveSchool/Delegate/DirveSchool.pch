@@ -36,7 +36,8 @@
 #import "UIScrollView+SVPullToRefresh.h"
 #import "UIScrollView+SVInfiniteScrolling.h"
 #import "MJRefresh.h"
-
+#import "MobClick.h"
+#import "MobClickSocialAnalytics.h"
 
 #define LOCAL_TEST YES                  //标示是否是本地测试
 

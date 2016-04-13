@@ -70,6 +70,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tabBarController.title = @"首页";
+    [MobClick beginLogPageView:@"DSMainViewController"];
 }
 
 -(void)initBanner{
@@ -114,7 +115,7 @@
             NSLog(@"%f",view.frame.size.width);
             int offset = 18;
             if(iPhone6plus){
-                offset = 15;
+                offset = 20;
                 button.frame = CGRectMake(0, -5, view.frame.size.width, _functionItemView.frame.size.height-10);
             }else if(iPhone4){
                 offset = 22;

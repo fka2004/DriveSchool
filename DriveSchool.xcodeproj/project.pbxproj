@@ -61,7 +61,6 @@
 		009227691A88656F001460E2 /* icon_main_tab_two_clicked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 009227591A88656F001460E2 /* icon_main_tab_two_clicked@2x.png */; };
 		0092276A1A88656F001460E2 /* icon_main_tab_three_clicked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092275A1A88656F001460E2 /* icon_main_tab_three_clicked@2x.png */; };
 		0092276B1A88656F001460E2 /* icon_main_tab_four_clicked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092275B1A88656F001460E2 /* icon_main_tab_four_clicked@2x.png */; };
-		0092276C1A88656F001460E2 /* 首页一_MarkMan.png in Resources */ = {isa = PBXBuildFile; fileRef = 0092275C1A88656F001460E2 /* 首页一_MarkMan.png */; };
 		0092277C1A889482001460E2 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 009227701A889482001460E2 /* UIActionSheet+Blocks.m */; };
 		0092277D1A889482001460E2 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 009227721A889482001460E2 /* UIAlertView+Blocks.m */; };
 		0092277E1A889482001460E2 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 009227741A889482001460E2 /* UIColor+Helper.m */; };
@@ -205,11 +204,11 @@
 		00CC32231ACFEC610040D141 /* icon_setting_school@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CC321A1ACFEC610040D141 /* icon_setting_school@2x.png */; };
 		00CC32241ACFEC610040D141 /* icon_setting_sex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CC321B1ACFEC610040D141 /* icon_setting_sex@2x.png */; };
 		00CC32251ACFEC610040D141 /* icon_setting_tel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CC321C1ACFEC610040D141 /* icon_setting_tel@2x.png */; };
+		00D9C1081B18490200EDDC3E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D9C1051B18490200EDDC3E /* libMobClickLibrary.a */; };
 		00ECBEBF1A87650C009F262E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECBEBE1A87650C009F262E /* main.m */; };
 		00ECBEC21A87650C009F262E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECBEC11A87650C009F262E /* AppDelegate.m */; };
 		00ECBEC81A87650C009F262E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00ECBEC61A87650C009F262E /* Main.storyboard */; };
 		00ECBECA1A87650C009F262E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00ECBEC91A87650C009F262E /* Images.xcassets */; };
-		00ECBECD1A87650C009F262E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00ECBECB1A87650C009F262E /* LaunchScreen.xib */; };
 		00ECBED91A87650C009F262E /* DriveSchoolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECBED81A87650C009F262E /* DriveSchoolTests.m */; };
 		00ECBF0F1A876ED3009F262E /* UIButton+Border.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECBEF21A876ED3009F262E /* UIButton+Border.m */; };
 		00ECBF261A879012009F262E /* DSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECBF251A879012009F262E /* DSMainViewController.m */; };
@@ -326,7 +325,6 @@
 		009227591A88656F001460E2 /* icon_main_tab_two_clicked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_main_tab_two_clicked@2x.png"; sourceTree = "<group>"; };
 		0092275A1A88656F001460E2 /* icon_main_tab_three_clicked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_main_tab_three_clicked@2x.png"; sourceTree = "<group>"; };
 		0092275B1A88656F001460E2 /* icon_main_tab_four_clicked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_main_tab_four_clicked@2x.png"; sourceTree = "<group>"; };
-		0092275C1A88656F001460E2 /* 首页一_MarkMan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页一_MarkMan.png"; sourceTree = "<group>"; };
 		0092276E1A88853E001460E2 /* DirveSchool.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DirveSchool.pch; sourceTree = "<group>"; };
 		0092276F1A889482001460E2 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
 		009227701A889482001460E2 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
@@ -578,6 +576,9 @@
 		00CC321A1ACFEC610040D141 /* icon_setting_school@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_setting_school@2x.png"; sourceTree = "<group>"; };
 		00CC321B1ACFEC610040D141 /* icon_setting_sex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_setting_sex@2x.png"; sourceTree = "<group>"; };
 		00CC321C1ACFEC610040D141 /* icon_setting_tel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_setting_tel@2x.png"; sourceTree = "<group>"; };
+		00D9C1051B18490200EDDC3E /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		00D9C1061B18490200EDDC3E /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		00D9C1071B18490200EDDC3E /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		00ECBEB91A87650C009F262E /* DriveSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ECBEBD1A87650C009F262E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00ECBEBE1A87650C009F262E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -585,7 +586,6 @@
 		00ECBEC11A87650C009F262E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		00ECBEC71A87650C009F262E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00ECBEC91A87650C009F262E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		00ECBECC1A87650C009F262E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		00ECBED21A87650C009F262E /* DriveSchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveSchoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ECBED71A87650C009F262E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00ECBED81A87650C009F262E /* DriveSchoolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriveSchoolTests.m; sourceTree = "<group>"; };
@@ -654,6 +654,7 @@
 				00BBFDCD1AC3E5050058EE9D /* CFNetwork.framework in Frameworks */,
 				18BC5F8B1AB1F7B900D82CF1 /* Foundation.framework in Frameworks */,
 				00BBFDCA1AC3E4B70058EE9D /* libmtasdk.a in Frameworks */,
+				00D9C1081B18490200EDDC3E /* libMobClickLibrary.a in Frameworks */,
 				18BC5F891AB1F7B000D82CF1 /* UIKit.framework in Frameworks */,
 				18BC5F871AB1F7A600D82CF1 /* MobileCoreServices.framework in Frameworks */,
 				18BC5F831AB1F78C00D82CF1 /* QuartzCore.framework in Frameworks */,
@@ -798,7 +799,6 @@
 				009227591A88656F001460E2 /* icon_main_tab_two_clicked@2x.png */,
 				0092275A1A88656F001460E2 /* icon_main_tab_three_clicked@2x.png */,
 				0092275B1A88656F001460E2 /* icon_main_tab_four_clicked@2x.png */,
-				0092275C1A88656F001460E2 /* 首页一_MarkMan.png */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -817,6 +817,7 @@
 		009229351A889566001460E2 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				00D9C1041B18490200EDDC3E /* UMAnalytics_Sdk_3.5.8 */,
 				0016802F1B00BB590003248F /* SVPullToRefresh */,
 				00BBFDC31AC3E4B70058EE9D /* XGPush */,
 				00C2C6001AC25A2200D51A72 /* DatePicker */,
@@ -1341,6 +1342,16 @@
 			path = icon;
 			sourceTree = "<group>";
 		};
+		00D9C1041B18490200EDDC3E /* UMAnalytics_Sdk_3.5.8 */ = {
+			isa = PBXGroup;
+			children = (
+				00D9C1051B18490200EDDC3E /* libMobClickLibrary.a */,
+				00D9C1061B18490200EDDC3E /* MobClick.h */,
+				00D9C1071B18490200EDDC3E /* MobClickSocialAnalytics.h */,
+			);
+			path = UMAnalytics_Sdk_3.5.8;
+			sourceTree = "<group>";
+		};
 		00ECBEB01A87650C009F262E = {
 			isa = PBXGroup;
 			children = (
@@ -1378,7 +1389,6 @@
 				00ECBEE21A876ED3009F262E /* Categories */,
 				00ECBEC61A87650C009F262E /* Main.storyboard */,
 				00ECBEC91A87650C009F262E /* Images.xcassets */,
-				00ECBECB1A87650C009F262E /* LaunchScreen.xib */,
 				00ECBEBC1A87650C009F262E /* Supporting Files */,
 			);
 			path = DriveSchool;
@@ -1654,7 +1664,6 @@
 				00552C9C1B15F5FD000BBB10 /* icon_114@2x.png in Resources */,
 				00B9668D1A9752E400F3D7AF /* icon_subjectTwo_time@2x.png in Resources */,
 				00ECBEC81A87650C009F262E /* Main.storyboard in Resources */,
-				00ECBECD1A87650C009F262E /* LaunchScreen.xib in Resources */,
 				00BB23A61AD4E0BA00837D51 /* qw_03.png in Resources */,
 				00BB23A31AD4E0BA00837D51 /* icon_question_b@2x.png in Resources */,
 				009227611A88656F001460E2 /* btn_main_item_two@2x.png in Resources */,
@@ -1707,7 +1716,6 @@
 				009227661A88656F001460E2 /* icon_main_tab_three_click@2x.png in Resources */,
 				00552C991B15F5FD000BBB10 /* icon_29@2x.png in Resources */,
 				009229E11A889566001460E2 /* license in Resources */,
-				0092276C1A88656F001460E2 /* 首页一_MarkMan.png in Resources */,
 				00552C9B1B15F5FD000BBB10 /* icon_58@2x.png in Resources */,
 				009227641A88656F001460E2 /* icon_main_tab_one_clicked@2x.png in Resources */,
 				00BB23A71AD4E0BA00837D51 /* qw_05.png in Resources */,
@@ -1881,14 +1889,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		00ECBECB1A87650C009F262E /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00ECBECC1A87650C009F262E /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1974,6 +1974,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DriveSchool/Delegate/DirveSchool.pch";
@@ -1985,10 +1986,12 @@
 					"$(PROJECT_DIR)/DriveSchool/Vendors/libWeiboSDK",
 					"$(PROJECT_DIR)/DriveSchool/Vendors/Wechat",
 					"$(PROJECT_DIR)/DriveSchool/Vendors/XGPush",
+					"$(PROJECT_DIR)/DriveSchool/Vendors/UMAnalytics_Sdk_3.5.8",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1996,6 +1999,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DriveSchool/Delegate/DirveSchool.pch";
@@ -2007,10 +2011,12 @@
 					"$(PROJECT_DIR)/DriveSchool/Vendors/libWeiboSDK",
 					"$(PROJECT_DIR)/DriveSchool/Vendors/Wechat",
 					"$(PROJECT_DIR)/DriveSchool/Vendors/XGPush",
+					"$(PROJECT_DIR)/DriveSchool/Vendors/UMAnalytics_Sdk_3.5.8",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

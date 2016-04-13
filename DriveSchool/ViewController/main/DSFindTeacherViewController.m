@@ -38,6 +38,10 @@
     self.navigationItem.rightBarButtonItem = rightButtonItem;
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"DSFindTeacherViewController"];
+}
 -(void)initRefreshView{
     [self.tableView addFooterWithTarget:self action:@selector(refreshBottom)];
     self.tableView.footerPullToRefreshText = @"上拉加载";

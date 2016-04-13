@@ -23,6 +23,10 @@
     [self initDataWithStart:@"0" size:@"15"];
     [self initRefreshView];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"DSNewSubjectThreeViewController"];
+}
 -(void)setDefaultValue{
     _teachersArray = [[NSMutableArray alloc]init];
     _usedTeachers = [[NSMutableArray alloc]init];

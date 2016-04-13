@@ -26,6 +26,10 @@
     [self initDataWithStart:@"0" size:@"15"];
     [self initRefreshView];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"DSNewSubjectTwoViewController"];
+}
 -(void)setDefaultValue{
     _usedTeachers = [[NSMutableArray alloc]init];
     self.edgesForExtendedLayout = UIRectEdgeNone;

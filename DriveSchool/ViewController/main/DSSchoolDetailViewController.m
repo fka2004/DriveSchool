@@ -35,7 +35,10 @@
     _schoolInfo = [self.passedParams nonNullValueForKey:@"school"];
     
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"DSSchoolDetailViewController"];
+}
 -(void)getSchoolData{
 //    NSString *schoolId = [[NSString alloc]initWithFormat:@"%@",[_schoolInfo nonNullValueForKey:@"id"]];
     NSDictionary *params = @{@"id":[_schoolInfo nonNullValueForKey:@"id"]};

@@ -81,6 +81,10 @@ static NSString * const kAPI_GET_CITYS= @"/driving-school-web/app/getOpenDistric
 static NSString * const kAPI_UPDATE_USER= @"/driving-school-web/app/login";
 //获取验证码
 static NSString * const kAPI_GET_CODE= @"/driving-school-web/app/getRandomCode";
+//注册接口
+static NSString * const kAPI_UPDATE_REGIST= @"/driving-school-web/app/regist";
+//找回密码接口
+static NSString * const kAPI_UPDATE_FINDPWD= @"/driving-school-web/app/findPassword";
 //绑定驾校
 static NSString * const kAPI_UPDATE_BIND= @"/driving-school-web/app/bindDrivingSchool";
 //修改教练密码

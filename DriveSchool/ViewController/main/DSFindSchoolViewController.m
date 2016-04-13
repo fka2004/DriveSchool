@@ -26,6 +26,10 @@
     [self initRefreshView];
     [self initDataWithStart:@"0" size:@"15"];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"DSFindSchoolViewController"];
+}
 -(void)setDefaultValue{
     self.title = @"找驾校";
     _schoolArray = [[NSMutableArray alloc]init];

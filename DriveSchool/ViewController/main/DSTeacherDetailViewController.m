@@ -42,6 +42,10 @@
 //    [self initBanner];
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"DSTeacherDetailViewController"];
+}
 -(void)setDefaultValue{
     self.title = @"教练信息";
 //    _teacherInfoView.layer.borderWidth = 1;
